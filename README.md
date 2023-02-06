@@ -32,7 +32,6 @@ $ sudo make install
 More info can be found at [magic](http://opencircuitdesign.com/magic/index.html)
 
 - To install SKY130  PDKs
-```
 ### Netgen
 Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic" <br /><br />
 Install steps:
@@ -73,6 +72,7 @@ $ sudo apt-get install xterm
 
 Open_PDKs is distributed with files that support the Google/SkyWater sky130 open process description [https://github.com/google/skywater-pdk](https://github.com/google/skywater-pdk). Open_PDKs will set up an environment for using the SkyWater sky130 process with open-source EDA tools and tool flows such as magic, qflow, openlane, netgen, klayout, etc.<br /><br />
 Install steps:
+
 ```
 $  git clone git://opencircuitdesign.com/open_pdks
 $  open_pdks
@@ -83,11 +83,15 @@ $  sudo make install
 
  ### Week 1 Day 3 - Install Oracle virtual box with Ubuntu 20.04
  
-
-sudo apt install python3.8-venv
+ ```
+export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
+git clone https://github.com/ALIGN-analoglayout/ALIGN-public
+cd ALIGN-public
 python3.8 -m venv general
-python -m pip install pip --upgrade
+source general/bin/activate
+python3.8 -m pip install pip --upgrade
+cd ALIGN-public
+pip install -v .
 
-come out of general directory 
-
-cd 
+```
