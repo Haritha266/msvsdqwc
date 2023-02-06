@@ -26,11 +26,68 @@ $ sudo apt-get install libcairo2-dev
 $ sudo apt-get install mesa-common-dev libglu1-mesa-dev
 $ sudo apt-get install libncurses-dev
 $ ./configure
+$ make
+$ sudo make install
+```
+More info can be found at [magic](http://opencircuitdesign.com/magic/index.html)
+
+- To install SKY130  PDKs
+```
+### Netgen
+Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic" <br /><br />
+Install steps:
+```
+$  git clone git://opencircuitdesign.com/netgen
+$  cd netgen
+$	./configure
 $  make
 $  sudo make install
 ```
-More info can be found at [magic](http://opencircuitdesign.com/magic/index.html)
+More info can be found at [http://opencircuitdesign.com/netgen/index.html](http://opencircuitdesign.com/netgen/index.html)
+
+### Xschem
+Xschem is a schematic capture program
+Install steps:
+```
+$ git clone https://github.com/StefanSchippers/xschem.git xschem_git
+$ sudo apt-get install flex
+$ sudo apt-get install bison
+$ sudo apt-get install libxpm-dev
+$ ./configure
+$ make
+$ sudo make install
+```
+More info can be found at [http://repo.hu/projects/xschem/index.html](http://repo.hu/projects/xschem/index.html)
+
+### Ngspice
+ngspice is the open-source spice simulator for electric and electronic circuits.
+'sudo apt-get install ngspice'
+More info can be found at [https://ngspice.sourceforge.io/index.html](https://ngspice.sourceforge.io/index.html)
+
+Please note that to view the simulation graphs of ngspice, xterm is required and can be installed using.
+```
+$ sudo apt-get update
+$ sudo apt-get install xterm
+```
+### open_pdk
+
+Open_PDKs is distributed with files that support the Google/SkyWater sky130 open process description [https://github.com/google/skywater-pdk](https://github.com/google/skywater-pdk). Open_PDKs will set up an environment for using the SkyWater sky130 process with open-source EDA tools and tool flows such as magic, qflow, openlane, netgen, klayout, etc.<br /><br />
+Install steps:
+```
+$  git clone git://opencircuitdesign.com/open_pdks
+$  open_pdks
+$	./configure --enable-sky130-pdk
+$  make
+$  sudo make install
+```
 
  ### Week 1 Day 3 - Install Oracle virtual box with Ubuntu 20.04
  
 
+sudo apt install python3.8-venv
+python3.8 -m venv general
+python -m pip install pip --upgrade
+
+come out of general directory 
+
+cd 
