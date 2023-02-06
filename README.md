@@ -92,6 +92,7 @@ python3.8 -m venv general
 source general/bin/activate
 python3.8 -m pip install pip --upgrade
 cd ALIGN-public
+python3 -m pip install wheel setuptools pip --upgrade
 pip install -v .
-
+sudo apt-get -y install cmake
 ```
