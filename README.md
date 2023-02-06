@@ -75,7 +75,7 @@ Install steps:
 
 ```
 $  git clone git://opencircuitdesign.com/open_pdks
-$  open_pdks
+$  cd open_pdks
 $	./configure --enable-sky130-pdk
 $  make
 $  sudo make install
