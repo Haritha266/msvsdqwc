@@ -95,4 +95,6 @@ cd ALIGN-public
 python3 -m pip install wheel setuptools pip --upgrade
 pip install -v .
 sudo apt-get -y install cmake
+schematic2layout.py /home/haritha266/Desktop/ALIGN-public/ALIGN-pdk-sky130/examples/telescopic_ota -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/
+
 ```
