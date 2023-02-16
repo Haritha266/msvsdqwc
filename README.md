@@ -97,4 +97,10 @@ pip install -v .
 sudo apt-get -y install cmake
 schematic2layout.py /home/haritha266/Desktop/ALIGN-public/ALIGN-pdk-sky130/examples/telescopic_ota -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/
 
+
+.subckt inverter vdd vin vout vss
+XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2.6 nf=1 
+XM2 vout vin vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 
+.ends inverter
+
 ```
