@@ -3,6 +3,7 @@
 # Table of Contents  
  - [Week 1](https://github.com/Haritha266/msvsdqwc/blob/main/README.md#week-1-day-0)
  
+ # Week -1
  
  ### Install Oracle virtual box with Ubuntu 20.04
  - If you have a windows machine, install Oracle virtual box with Ubuntu 20.04 - RAM at least 4GB, hard-disk atleast 50GB 
@@ -137,32 +138,133 @@ ext2spice lvs
 ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
-This will create inverter.mag and inverter.ext files and also a .spice netlist. This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+This will create inverter.mag and inverter.ext files and also a .spice netlist. This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.Now selectively paste the control statements into postlayout netlist extracted from Magic Tool
 
 ![4](https://user-images.githubusercontent.com/83575446/219821606-efc30934-0b16-4cad-87f0-7b74ec31652a.png)
 
-Now selectively paste the control statements into postlayout netlist extracted from Magic Tool
+### Creting schematic for the function  Fn = [(B+D).(A+C)+E.F]' and perform pre-layout using xschem or ngspice
 
+![8](https://user-images.githubusercontent.com/83575446/219823135-3bd8530e-189d-4a42-a12f-b723bf9c280d.png)
 
+Generate netlist for pre-layout of Fn and plot the graphs
 
- ```
+  The following path has to be added to add sky130 PDK technology
+  `.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt`
+
+![9](https://user-images.githubusercontent.com/83575446/219823200-80005e32-377c-4dc1-8485-22dbf56b8664.png)
+
+# Week -2
+
+#### Installing ALIGN:
+**Prerequisites**
+
+- gcc >= 6.1.0 (For C++14 support)
+- python >= 3.7 
+
+### Install ALIGN
+
+```
 export CC=/usr/bin/gcc
 export CXX=/usr/bin/g++
 git clone https://github.com/ALIGN-analoglayout/ALIGN-public
 cd ALIGN-public
-python3.8 -m venv general
+
+#Create a Python virtualenv
+python -m venv general
 source general/bin/activate
-python3.8 -m pip install pip --upgrade
-cd ALIGN-public
-python3 -m pip install wheel setuptools pip --upgrade
+python -m pip install pip --upgrade
+
+# Install ALIGN as a USER
 pip install -v .
-sudo apt-get -y install cmake
-schematic2layout.py /home/haritha266/Desktop/ALIGN-public/ALIGN-pdk-sky130/examples/telescopic_ota -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/
 
+# Install ALIGN as a DEVELOPER
+pip install -e .
 
+pip install setuptools wheel pybind11 scikit-build cmake ninja
+pip install -v -e .[test] --no-build-isolation
+pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
+
+```
+
+#### Making ALIGN Portable to Sky130 tehnology
+
+Clone the following Repository inside ALIGN-public directory
+
+```
+git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+```
+
+move `SKY130_PDK` folder to `/Users/gopalakrishnareddysanampudi/Documents/GitHub/OpenFASoC/AUXCELL/ALIGN-public/pdks`
+
+#### Running ALIGN TOOL
+
+Everytime we start running tool in new terminal run following commands.
+
+```
+python -m venv general
+source general/bin/activate
+```
+Commands to run ALIGN (goto ALIGN-public directory)
+
+```
+mkdir work
+cd work
+```
+General syntax to give inputs
+```
+schematic2layout.py <NETLIST_DIR> -p <PDK_DIR> -c
+```
+Create .lef and .gds files for inverter using the following SPICE Netlist with .sp file extension
+
+ ```
 .subckt inverter vdd vin vout vss
 XM1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2.6 nf=1 
 XM2 vout vin vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 
 .ends inverter
-
 ```
+
+In the working directory give the user inputs
+
+`schematic2layout.py /home/haritha266/Desktop/inverter -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/`
+
+
+![10](https://user-images.githubusercontent.com/83575446/219824165-1255f4fc-41d6-4987-8ca7-1a55cfeea9ff.png)
+
+Using klayout, .gds and .lef files can be viewed
+
+![5](https://user-images.githubusercontent.com/83575446/219824714-00d16016-4fa7-4efb-b24a-4adbb54a640d.png)
+
+
+# Post layout characterization of inverter using ALIGN
+Magic Tool is used to post layout Spice file. SPICE file can be simulated in NGSPICE and compare with prelayout.
+
+- Open terminal in work directory where our final gds stored.
+
+set PDK ROOT for Magic using the command -
+```
+export PDK_ROOT=/path/to/your/pdks/
+```
+
+Then type `magic` in terminal which open magic.
+
+- Then goto file and press read GDS and select our gds file
+- Place the curser outside layout press `s` which select entire layout.
+- Then goto tkcon and type `ext2spice`
+- post layout spice file is created in work directory
+
+![6](https://user-images.githubusercontent.com/83575446/219824391-bad75b41-ef70-424a-979e-917d362ee7e2.png)
+
+This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+
+![7](https://user-images.githubusercontent.com/83575446/219824786-d9e767ca-67a9-425d-9e8e-90ded7836766.png)
+
+
+
+
+
+
+
+
+
+
+
