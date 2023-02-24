@@ -258,8 +258,68 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 ![7](https://user-images.githubusercontent.com/83575446/219824786-d9e767ca-67a9-425d-9e8e-90ded7836766.png)
 
+### Function Post-layout characterization using magic and SKY130 PDKs
+
+Go to the working directory and enter the following commands
+
+```
+magic -T sky130A.magicrc
+magic -T sky130A.tech
+```
+
+![11](https://user-images.githubusercontent.com/83575446/221121024-0220028a-c127-4c61-829a-b9efe91e4abe.png)
+
+In the tkcon window check for the DRC errors and perform post layout charectarization
+
+```
+extract do local
+extract all
+ext2spice lvs
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.Now selectively paste the control statements into postlayout netlist extracted from Magic Tool
+
+![12](https://user-images.githubusercontent.com/83575446/221121048-6a540de2-5756-4e0c-b3e5-1588417f924b.png)
+
+# Post layout characterization of Fn using ALIGN
+
+In the working directory of ALIGN give the user inputs
+
+`schematic2layout.py /home/haritha266/Desktop/function -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/`
+
+Using klayout, .gds and .lef files can be viewed
+
+![13](https://user-images.githubusercontent.com/83575446/221121068-b949a4bb-d6d3-4388-bc5c-ea68f749d755.png)
+
+Magic Tool is used to post layout Spice file. SPICE file can be simulated in NGSPICE and compare with prelayout.
+
+- Open terminal in work directory where our final gds stored.
+
+set PDK ROOT for Magic using the command -
+```
+export PDK_ROOT=/path/to/your/pdks/
+```
+
+Then type `magic` in terminal which open magic.
+
+- Then goto file and press read GDS and select our gds file
+- Place the curser outside layout press `s` which select entire layout.
+- Then goto tkcon and type `ext2spice`
+- post layout spice file is created in work directory
+
+![14](https://user-images.githubusercontent.com/83575446/221120951-0f889ad4-f1a0-4dd9-8323-5916906c5888.png)
+
+![15](https://user-images.githubusercontent.com/83575446/221120963-4929f376-0e83-4d03-94b5-671b5376161d.png)
+
+This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+
+![16](https://user-images.githubusercontent.com/83575446/221120969-e2a20933-ffe0-40cb-966f-91d6d67906b4.png)
+
+# Week -3
 
 
+![17](https://user-images.githubusercontent.com/83575446/221120978-28a89ff2-66b3-4ee1-9f88-28302f48213a.png)
 
 
 
