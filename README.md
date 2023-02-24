@@ -161,8 +161,6 @@ Generate netlist for pre-layout of Fn and plot the graphs
 - gcc >= 6.1.0 (For C++14 support)
 - python >= 3.7 
 
-### Install ALIGN
-
 ```
 export CC=/usr/bin/gcc
 export CXX=/usr/bin/g++
@@ -235,7 +233,7 @@ Using klayout, .gds and .lef files can be viewed
 ![5](https://user-images.githubusercontent.com/83575446/219824714-00d16016-4fa7-4efb-b24a-4adbb54a640d.png)
 
 
-# Post layout characterization of inverter using ALIGN
+### Post layout characterization of inverter using ALIGN
 Magic Tool is used to post layout Spice file. SPICE file can be simulated in NGSPICE and compare with prelayout.
 
 - Open terminal in work directory where our final gds stored.
@@ -282,7 +280,7 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 ![12](https://user-images.githubusercontent.com/83575446/221121048-6a540de2-5756-4e0c-b3e5-1588417f924b.png)
 
-# Post layout characterization of Fn using ALIGN
+### Post layout characterization of Fn using ALIGN
 
 In the working directory of ALIGN give the user inputs
 
@@ -318,6 +316,63 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 # Week -3
 
+### Intalling OpenROAD
+
+OpenROAD is an integrated chip physical design tool that takes a design from synthesized Verilog to routed layout.
+
+An outline of steps used to build a chip using OpenROAD is shown below:
+
+-Initialize floorplan - define the chip size and cell rows
+-Place pins (for designs without pads )
+-Place macro cells (RAMs, embedded macros)
+-Insert substrate tap cells
+-Insert power distribution network
+-Macro Placement of macro cells
+-Global placement of standard cells
+-Repair max slew, max capacitance, and max fanout violations and long wires
+-Clock tree synthesis
+-Optimize setup/hold timing
+-Insert fill cells
+-Global routing (route guides for detailed routing)
+-Antenna repair
+-Detailed routing
+-Parasitic extraction
+-Static timing analysis
+
+### Steps to install openROAD are
+
+```
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
+cd OpenROAD
+sudo ./etc/DependencyInstaller.sh
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+cd OpenROAD-flow-scripts
+./build_openroad.sh –local
+export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
+export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+```
+### Intalling OpenFASOC
+
+OpenFASoC is a project focused on automated analog generation from user specification to GDSII with fully open-sourced tools. It is led by a team of researchers at the University of Michigan and is inspired from FASoC which sits on proprietary software.
+
+The tool is comprised of analog and mixed-signal circuit generators, which automatically create a physical design based on user specifications.
+
+
+-First, cd into a directory of your choice and clone the OpenFASoC repository:
+
+`git clone https://github.com/idea-fasoc/openfasoc`
+
+-Now go to the home location of this repository (where the README.rst file is located) and run `sudo ./dependencies.sh.`
+- Or follow the below steps
+```
+cd
+git clone https://github.com/idea-fasoc/openfasoc
+cd openfasoc
+sudo ./dependencies.sh
+
+```
 
 ![17](https://user-images.githubusercontent.com/83575446/221120978-28a89ff2-66b3-4ee1-9f88-28302f48213a.png)
 
