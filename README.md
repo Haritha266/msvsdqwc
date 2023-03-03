@@ -537,10 +537,55 @@ Netgen is then used to run the comparison, outputting a report under temp-sense-
 
 ![17](https://user-images.githubusercontent.com/83575446/221120978-28a89ff2-66b3-4ee1-9f88-28302f48213a.png)
 
+# Week -4
+ 
+ ## Circuit diagram of 4-Bit Asynchronous Up Counter
+ 
+ ![image](https://user-images.githubusercontent.com/83575446/222718876-f0587a88-4bea-47db-81c7-81cf1c3d421f.png)
 
+## Implementation of ring oscillator in Xschem
 
+![19](https://user-images.githubusercontent.com/83575446/222718500-dd394bd3-ec73-47f4-83f2-11a8fca959a9.png)
 
+![18](https://user-images.githubusercontent.com/83575446/222718518-e89efcbd-27af-4298-b224-3f7d777ee82d.png)
 
+## Post layout characterization of ring oscillator using ALIGN
+
+In the working directory of ALIGN give the user inputs
+
+`schematic2layout.py /home/haritha266/Desktop/analog -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/`
+
+![20](https://user-images.githubusercontent.com/83575446/222718552-d3109352-d58c-489c-a15f-1b784e755716.png)
+
+Using klayout, .gds and .lef files can be viewed
+
+![21](https://user-images.githubusercontent.com/83575446/222719801-7153cfde-7f72-4356-8f08-34802b11f1db.png)
+
+![22](https://user-images.githubusercontent.com/83575446/222718408-ad240265-af39-4d5b-87be-16044b1f8e0c.png)
+
+Magic Tool is used to post layout Spice file. SPICE file can be simulated in NGSPICE and compare with prelayout.
+
+- Open terminal in work directory where our final gds stored.
+
+set PDK ROOT for Magic using the command -
+```
+export PDK_ROOT=/path/to/your/pdks/
+```
+
+Then type `magic` in terminal which open magic.
+
+- Then goto file and press read GDS and select our gds file
+- Place the curser outside layout press `s` which select entire layout.
+- Then goto tkcon and type `ext2spice`
+- post layout spice file is created in work directory
+
+![23](https://user-images.githubusercontent.com/83575446/222718413-c39fc022-c255-4b56-af95-390d93643fc4.png)
+
+![24](https://user-images.githubusercontent.com/83575446/222718420-bc2fb29d-9321-46c0-aa21-a5e54b232fc1.png)
+
+This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+
+![25](https://user-images.githubusercontent.com/83575446/222718426-5dea3690-ce67-4168-be4c-e8d0561dbdd1.png)
 
 
 
