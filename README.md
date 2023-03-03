@@ -1,7 +1,10 @@
 # VSD Mixed-signal PD Research Program - msvsdqwc
 
 # Table of Contents  
- - [Week 1](https://github.com/Haritha266/msvsdqwc/blob/main/README.md#week-1-day-0)
+ - [Week 1](https://github.com/Haritha266/msvsdqwc#week--1)
+ - [Week 2](https://github.com/Haritha266/msvsdqwc#week--2)
+ - [Week 3](https://github.com/Haritha266/msvsdqwc#week--3)
+ - [Week 4](https://github.com/Haritha266/msvsdqwc#week--4)
  
  # Week -1
  
