@@ -590,5 +590,48 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 ![25](https://user-images.githubusercontent.com/83575446/222718426-5dea3690-ce67-4168-be4c-e8d0561dbdd1.png)
 
+# Week -5
+ 
+ ## Circuit diagram of ADC
+ 
+ ![26](https://user-images.githubusercontent.com/83575446/224398125-806702e9-c82d-410f-8171-624d364c876c.png)
+
+## Implementation of ADC in Xschem
+
+![27](https://user-images.githubusercontent.com/83575446/224398339-dd02f181-6c9d-4d83-9a25-4ad2a8cc1d50.png)
+
+## Post layout characterization of ADC using ALIGN
+
+In the working directory of ALIGN give the user inputs
+
+`schematic2layout.py /home/haritha266/Desktop/analog -p /home/haritha266/Desktop/ALIGN-public/pdks/SKY130_PDK/`
+
+Using klayout, .gds and .lef files can be viewed
+
+![29](https://user-images.githubusercontent.com/83575446/224399088-58eaa280-1685-487b-91db-85e9a06fc26e.png)
+
+![30](https://user-images.githubusercontent.com/83575446/224399105-48639ac8-3ddf-4462-9894-324e19057c1f.png)
+
+Magic Tool is used to post layout Spice file. SPICE file can be simulated in NGSPICE and compare with prelayout.
+
+- Open terminal in work directory where our final gds stored.
+
+set PDK ROOT for Magic using the command -
+```
+export PDK_ROOT=/path/to/your/pdks/
+```
+
+Then type `magic` in terminal which open magic.
+
+- Then goto file and press read GDS and select our gds file
+- Place the curser outside layout press `s` which select entire layout.
+- Then goto tkcon and type `ext2spice`
+- post layout spice file is created in work directory
+
+![28](https://user-images.githubusercontent.com/83575446/224398994-a3851fa0-8358-4623-867d-f16b233aac32.png)
+
+This .spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+
+![31](https://user-images.githubusercontent.com/83575446/224399353-c2f82373-7c73-4eea-9d1c-a7d6181a08ab.png)
 
 
