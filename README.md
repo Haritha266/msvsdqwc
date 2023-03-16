@@ -6,6 +6,7 @@
  - [Week 3](https://github.com/Haritha266/msvsdqwc#week--3)
  - [Week 4](https://github.com/Haritha266/msvsdqwc#week--4)
  - [Week 5](https://github.com/Haritha266/msvsdqwc#week--5)
+ - [Week 6](https://github.com/Haritha266/msvsdqwc#week--6)
  
  # Week -1
  
@@ -671,3 +672,6 @@ ring_osc m1(.vss(vss),.vdd(vdd),.out1(out1));
 adc m2(.vin(out1),.vref(vref),.vss(vss),.vdd(vdd),.out2(output));
 endmodule
 ```
+
+ # Week -6
+ 
