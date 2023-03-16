@@ -661,7 +661,7 @@ endmodule
 Integration of ADC & Ring_oscillator
 
 ```
-module analog_block(
+module asynch_up_down(
 input vss,
 input vdd,
 input vref,
