@@ -639,7 +639,8 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 ## Dummy Verilog Code for ADC
 
-```module adc(
+```
+module adc(
 input vin,
 input vref,
 input vss,
@@ -649,7 +650,8 @@ endmodule
 ```
 ## Dummy Verilog Code for Ring Oscillator
 
-```module ring_osc(
+```
+module ring_osc(
 input vss,
 input vdd,
 ouput out1);
