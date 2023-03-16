@@ -635,4 +635,37 @@ This .spice netlist generated post layout contains the parasitics that were abse
 
 ![31](https://user-images.githubusercontent.com/83575446/224399353-c2f82373-7c73-4eea-9d1c-a7d6181a08ab.png)
 
+![image](https://user-images.githubusercontent.com/83575446/225680174-f914b402-edf5-49ea-8b1e-d87d2b568e37.png)
 
+## Dummy Verilog Code for ADC
+
+```module adc(
+input vin,
+input vref,
+input vss,
+input vdd,
+ouput out2);
+endmodule
+```
+## Dummy Verilog Code for Ring Oscillator
+
+```module ring_osc(
+input vss,
+input vdd,
+ouput out1);
+endmodule
+```
+Integration of ADC & Ring_oscillator
+
+```
+module analog_block(
+input vss,
+input vdd,
+input vref,
+ouput output);
+
+wire out1;
+ring_osc m1(.vss(vss),.vdd(vdd),.out1(out1));
+adc m2(.vin(out1),.vref(vref),.vss(vss),.vdd(vdd),.out2(output));
+endmodule
+```
