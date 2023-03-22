@@ -675,3 +675,9 @@ endmodule
 
  # Week -6
  
+![32](https://user-images.githubusercontent.com/83575446/226872915-250e3ba4-0e45-449c-9388-cd4786d6ed57.png)
+
+![33](https://user-images.githubusercontent.com/83575446/226872973-cecf2022-fe26-4641-81f0-86f8395ba68b.png)
+
+![34](https://user-images.githubusercontent.com/83575446/226872996-e63f1357-3c1c-4e5a-a03b-34b7fce4874d.png)
+
