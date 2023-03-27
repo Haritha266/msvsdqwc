@@ -675,16 +675,13 @@ endmodule
 
  # Week -6
  
-![32](https://user-images.githubusercontent.com/83575446/226872915-250e3ba4-0e45-449c-9388-cd4786d6ed57.png)
+![32](https://user-images.githubusercontent.com/83575446/228045330-73d665f7-c079-4190-8d1d-7defb1911ad4.png)
 
-![33](https://user-images.githubusercontent.com/83575446/226897310-9f46fbe2-54d6-4723-b280-2e02ac056e99.png)
+![33](https://user-images.githubusercontent.com/83575446/228045371-5a8018eb-db66-4454-811f-589a57dc741f.png)
 
-![34](https://user-images.githubusercontent.com/83575446/226872996-e63f1357-3c1c-4e5a-a03b-34b7fce4874d.png)
+![34](https://user-images.githubusercontent.com/83575446/228045399-c6e3ef9b-961a-40b5-82ac-a0f5582366d9.png)
 
-![35](https://user-images.githubusercontent.com/83575446/226897351-024cb6ea-eeff-484a-84c4-6d6c8d44fe14.png)
+![35](https://user-images.githubusercontent.com/83575446/228045454-1ba921dc-aa6c-460c-adbc-2410b8a8f646.png)
 
-![36](https://user-images.githubusercontent.com/83575446/226897386-b5415394-9113-46b5-b6ae-2be5d1125f50.png)
+![36](https://user-images.githubusercontent.com/83575446/228045671-d30bc0cb-cc78-4d57-8ba4-05e59895f858.png)
 
-![37](https://user-images.githubusercontent.com/83575446/226897455-63d98d31-1411-49f0-a04c-6089b49d35da.png)
-
-![38_error](https://user-images.githubusercontent.com/83575446/226901531-c931d1aa-d64a-4640-9210-abe3870b7340.png)
