@@ -761,3 +761,7 @@ Window Comparator utilizes two comparators in parallel to determine if a signal 
 ![56](https://user-images.githubusercontent.com/83575446/229346752-11606b45-6fb7-4fe2-8827-b9fec0514d2d.png)
 
 ![57](https://user-images.githubusercontent.com/83575446/229346757-84146c33-1219-4efc-831c-ab02a223927d.png)
+
+![58](https://user-images.githubusercontent.com/83575446/229350542-28f682d1-e109-4570-ad5d-866ffd5514f0.png)
+
+![59](https://user-images.githubusercontent.com/83575446/229350545-d02a33b7-e244-4751-b57c-61218362de32.png)
