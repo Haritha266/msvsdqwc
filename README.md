@@ -7,6 +7,7 @@
  - [Week 4](https://github.com/Haritha266/msvsdqwc#week--4)
  - [Week 5](https://github.com/Haritha266/msvsdqwc#week--5)
  - [Week 6](https://github.com/Haritha266/msvsdqwc#week--6)
+ - [Week 7](https://github.com/Haritha266/msvsdqwc#week--7)
  
  # Week -1
  
@@ -740,7 +741,8 @@ endmodule
 ## RTL to GDSII Done!
 
 
- # Week -6 - Window Comparator 
+ # Week -7 
+ # Design - Window Comparator 
  
 Window Comparator utilizes two comparators in parallel to determine if a signal is between two reference voltages. If the signal is within the window, the output is high. If the signal level is outside of the window, the output is low. For this design, the reference voltages are generated from a single supply with voltage dividers.
 
