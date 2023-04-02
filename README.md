@@ -739,3 +739,14 @@ endmodule
 
 ## RTL to GDSII Done!
 
+
+ # Week -6 - Window Comparator 
+ 
+Window Comparator utilizes two comparators in parallel to determine if a signal is between two reference voltages. If the signal is within the window, the output is high. If the signal level is outside of the window, the output is low. For this design, the reference voltages are generated from a single supply with voltage dividers.
+
+![52](https://user-images.githubusercontent.com/83575446/229342957-5f156cbd-8019-44e1-b0d7-3f9a94278c42.png)
+
+![53](https://user-images.githubusercontent.com/83575446/229342963-e1c7d5b7-85ec-40fa-96cf-8bb9111c1c29.png)
+
+![54](https://user-images.githubusercontent.com/83575446/229342966-f47655e5-94c4-4197-896c-3dc17a1a4517.png)
+
