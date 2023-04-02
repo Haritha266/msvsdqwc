@@ -174,9 +174,9 @@ git clone https://github.com/ALIGN-analoglayout/ALIGN-public
 cd ALIGN-public
 
 #Create a Python virtualenv
-python -m venv general
+python3.8 -m venv general
 source general/bin/activate
-python -m pip install pip --upgrade
+python3.8 -m pip install pip --upgrade
 
 # Install ALIGN as a USER
 pip install -v .
@@ -205,7 +205,7 @@ move `SKY130_PDK` folder to `/home/haritha266/Desktop/ALIGN-public/pdks`
 Everytime we start running tool in new terminal run following commands.
 
 ```
-python -m venv general
+python3.8 -m venv general
 source general/bin/activate
 ```
 Commands to run ALIGN (goto ALIGN-public directory)
