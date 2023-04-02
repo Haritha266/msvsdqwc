@@ -752,3 +752,12 @@ Window Comparator utilizes two comparators in parallel to determine if a signal 
 
 ![54](https://user-images.githubusercontent.com/83575446/229342966-f47655e5-94c4-4197-896c-3dc17a1a4517.png)
 
+### ALIGN showing erroe with resistors
+
+![55](https://user-images.githubusercontent.com/83575446/229346738-5941fddc-1d62-4ec0-9318-220319574fe0.png)
+
+### Window comparator without resistors
+
+![56](https://user-images.githubusercontent.com/83575446/229346752-11606b45-6fb7-4fe2-8827-b9fec0514d2d.png)
+
+![57](https://user-images.githubusercontent.com/83575446/229346757-84146c33-1219-4efc-831c-ab02a223927d.png)
